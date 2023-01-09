@@ -1,4 +1,4 @@
-# FEM - FAQ Accordian
+# FEM - FAQ accordion
 
 This is a solution to the [FAQ accordion card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam).
 
@@ -19,8 +19,8 @@ IMPORTANT - I've paused this design for the time being but there are some major 
 - The box in the design is added as ::after of the body as a quick solution to achieve the design. This will defintely create responsive issues.
 - This was done due to the fact that the image wasn't contained in it's own parent div where I could set an overflow:hidden to the parent. Because of this I had to do the overflow:hidden on the card itself which prevented me from adding an ::after or ::before on the card to get the hover box effect as whatever that was out of the card was hidden by default.
 - Adding the parent div on the image completely changed the spacing I had created thus making the modification will be time consuming.
-- Add a height to the accordian
-- The accordian needs a height to have a smooth animation effect. This should be done with JS where the height of the accordian child is taken and the height style is set within JS. Will probably require a rework of the entire accordian solution and will have to move away from the toggle that's currently in place.
+- Add a height to the accordion
+- The accordion needs a height to have a smooth animation effect. This should be done with JS where the height of the accordion child is taken and the height style is set within JS. Will probably require a rework of the entire accordion solution and will have to move away from the toggle that's currently in place.
 
 ### The challenge
 
@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/chucksterv/faq-accordion-card]
-- Live Site URL: [https://faq-accordian.projects.deshand.com]
+- Live Site URL: [https://faq-accordion.projects.deshand.com]
 
 ## My process
 

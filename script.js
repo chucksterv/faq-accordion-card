@@ -1,4 +1,4 @@
-const questions = document.querySelectorAll(".accordian__question");
+const questions = document.querySelectorAll(".accordion__question");
 
 questions.forEach((question) => {
   question.addEventListener("click", () => {

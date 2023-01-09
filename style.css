@@ -182,15 +182,15 @@ body {
   }
 }
 
-.accordian {
+.accordion {
   display: grid;
   gap: 0.9rem;
 }
-.accordian__item {
+.accordion__item {
   border-bottom: solid hsl(240deg, 5%, 91%) 1px;
   padding-bottom: 1rem;
 }
-.accordian__question {
+.accordion__question {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -198,31 +198,31 @@ body {
   align-items: flex-start;
   transition: 150ms color ease-in-out;
 }
-.accordian__question::after {
+.accordion__question::after {
   content: url("../../images/icon-arrow-down.svg");
   transition: 150ms transform ease-in-out;
 }
-.accordian__question:is(:hover, :focus) {
+.accordion__question:is(:hover, :focus) {
   color: hsl(14deg, 88%, 65%);
 }
-.accordian__question.active {
+.accordion__question.active {
   font-weight: 700;
 }
-.accordian__question.active::after {
+.accordion__question.active::after {
   transform: rotate(180deg);
 }
-.accordian__answer {
+.accordion__answer {
   padding-right: 2rem;
   height: 0;
   overflow: hidden;
   transition: 0.5s ease;
 }
-.accordian__answer.active {
+.accordion__answer.active {
   padding-top: 0.5rem;
   height: auto;
 }
 @media screen and (min-width: 57.5em) {
-  .accordian {
+  .accordion {
     justify-content: start;
     width: min(100%, 350px);
   }

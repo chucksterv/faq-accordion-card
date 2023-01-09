@@ -1,9 +1,9 @@
 @use "../abstracts/" as *;
 
-.accordian {
+.accordion {
   display: grid;
   gap: 0.9rem;
-  //Contains the entier accordian item
+  //Contains the entier accordion item
   &__item {
     border-bottom: solid clr(neutral, 200) 1px;
     padding-bottom: 1rem;
