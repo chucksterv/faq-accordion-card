@@ -1,0 +1,54 @@
+@use "../abstracts/" as *;
+
+.accordian {
+  display: grid;
+  gap: 0.9rem;
+  //Contains the entier accordian item
+  &__item {
+    border-bottom: solid clr(neutral, 200) 1px;
+    padding-bottom: 1rem;
+  }
+  //Question within the item
+  &__question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: flex-start;
+    transition: 150ms color ease-in-out;
+    //How the arrow was added
+    &::after {
+      content: url("../../images/icon-arrow-down.svg");
+      transition: 150ms transform ease-in-out;
+    }
+    //Focus and hover styling
+    &:is(:hover, :focus) {
+      color: clr(primary, "red");
+    }
+    //What to do when .active class is added to the question
+    &.active {
+      font-weight: $fw-700;
+      //Changing the direction of the arros
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  //Default styling for the answers
+  &__answer {
+    padding-right: 2rem;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+    //Displaying answer after active class is added
+    &.active {
+      padding-top: 0.5rem;
+      height: auto;
+    }
+  }
+
+  @include mq(md) {
+    justify-content: start;
+    width: min(100%, 350px);
+  }
+}

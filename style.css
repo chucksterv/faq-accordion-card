@@ -1,0 +1,306 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*
+  The following two functions are used to convert pixel values to rem and em values.
+  Only intended to be used in instances where designs call for very specific px values that are non-standard.
+  Please use rem and em values by default where possible without using this as a conversion tool.
+*/
+/*
+  Generates a media query according to either a breakpoint or a numerical unit.
+  Checks the breakpoints map.
+  Checks if the numerical value has a valid unit attached to it.
+  Converts all px values entered to em values.
+*/
+body {
+  font-size: 0.75rem;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  color: hsl(238deg, 29%, 16%);
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 0.825rem;
+}
+
+@media screen and (min-width: 57.5em) {
+  h1 {
+    text-align: left;
+  }
+}
+body {
+  display: grid;
+  place-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
+  position: relative;
+}
+@media screen and (min-width: 57.5em) {
+  body {
+    padding-top: 5rem;
+  }
+  body::after {
+    content: url("../../images/illustration-box-desktop.svg");
+    position: absolute;
+    left: 10%;
+    top: 43%;
+  }
+}
+
+.card {
+  position: relative;
+  background-color: hsl(0deg, 0%, 100%);
+  width: min(100% - 3rem, 37.5rem);
+  border-radius: 1rem;
+  display: grid;
+  padding: 2rem 1.5rem 4rem;
+}
+.card__img {
+  position: relative;
+  margin-inline: auto;
+  transform: translateY(-75%);
+  width: 260px;
+}
+.card__img::after {
+  content: url("../../images/bg-pattern-mobile.svg");
+  position: absolute;
+  width: 240px;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card__content {
+  margin-top: -6rem;
+}
+@media screen and (min-width: 57.5em) {
+  .card {
+    width: min(100% - 5rem, 57.5rem);
+    background-image: url("../../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left -560px bottom -150px;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .card__img {
+    transform: translateY(0);
+    transform: translateX(-25%);
+    width: 450px;
+  }
+  .card__img::after {
+    content: none;
+  }
+  .card__content {
+    margin-top: 0rem;
+  }
+}
+
+.accordian {
+  display: grid;
+  gap: 0.9rem;
+}
+.accordian__item {
+  border-bottom: solid hsl(240deg, 5%, 91%) 1px;
+  padding-bottom: 1rem;
+}
+.accordian__question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: flex-start;
+  transition: 150ms color ease-in-out;
+}
+.accordian__question::after {
+  content: url("../../images/icon-arrow-down.svg");
+  transition: 150ms transform ease-in-out;
+}
+.accordian__question:is(:hover, :focus) {
+  color: hsl(14deg, 88%, 65%);
+}
+.accordian__question.active {
+  font-weight: 700;
+}
+.accordian__question.active::after {
+  transform: rotate(180deg);
+}
+.accordian__answer {
+  padding-right: 2rem;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+.accordian__answer.active {
+  padding-top: 0.5rem;
+  height: auto;
+}
+@media screen and (min-width: 57.5em) {
+  .accordian {
+    justify-content: start;
+    width: min(100%, 350px);
+  }
+}
+
+.clr-primary-blue {
+  color: hsl(238deg, 29%, 16%);
+}
+
+.bg-primary-blue {
+  background-color: hsl(238deg, 29%, 16%);
+}
+
+.clr-primary-red {
+  color: hsl(14deg, 88%, 65%);
+}
+
+.bg-primary-red {
+  background-color: hsl(14deg, 88%, 65%);
+}
+
+.clr-accent-grd-1 {
+  color: hsl(273deg, 75%, 66%);
+}
+
+.bg-accent-grd-1 {
+  background-color: hsl(273deg, 75%, 66%);
+}
+
+.clr-accent-grd-2 {
+  color: hsl(240deg, 73%, 65%);
+}
+
+.bg-accent-grd-2 {
+  background-color: hsl(240deg, 73%, 65%);
+}
+
+.clr-neutral-100 {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.bg-neutral-100 {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+.clr-neutral-200 {
+  color: hsl(240deg, 5%, 91%);
+}
+
+.bg-neutral-200 {
+  background-color: hsl(240deg, 5%, 91%);
+}
+
+.clr-neutral-400 {
+  color: hsl(240deg, 6%, 50%);
+}
+
+.bg-neutral-400 {
+  background-color: hsl(240deg, 6%, 50%);
+}
+
+.clr-neutral-500 {
+  color: hsl(237deg, 12%, 33%);
+}
+
+.bg-neutral-500 {
+  background-color: hsl(237deg, 12%, 33%);
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}/*# sourceMappingURL=style.css.map */

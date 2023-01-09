@@ -1,0 +1,24 @@
+@use "../abstracts/" as *;
+
+body {
+  font-size: $fs-regular;
+  font-family: $ff-default;
+  font-weight: $fw-400;
+  color: clr(primary, "blue");
+}
+h1 {
+  text-align: center;
+  font-weight: $fw-700;
+  font-size: $fs-heading;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-weight: $fw-400;
+  font-size: $fs-heading-2;
+}
+
+@include mq(md) {
+  h1 {
+    text-align: left;
+  }
+}

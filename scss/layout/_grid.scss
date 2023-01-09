@@ -1,0 +1,55 @@
+@use "../abstracts/" as *;
+
+.card {
+  position: relative;
+  background-color: clr(neutral, 100);
+  width: min(100% - 3rem, rem(600px));
+  border-radius: 1rem;
+
+  display: grid;
+  padding: 2rem 1.5rem 4rem;
+
+  &__img {
+    position: relative;
+    margin-inline: auto;
+    transform: translateY(-75%);
+    width: max(260px);
+
+    &::after {
+      content: url("../../images/bg-pattern-mobile.svg");
+      position: absolute;
+
+      width: 240px;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__content {
+    margin-top: -6rem;
+  }
+
+  @include mq(md) {
+    width: min(100% - 5rem, rem(920px));
+    background-image: url("../../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left -560px bottom -150px;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+
+    &__img {
+      transform: translateY(0);
+      transform: translateX(-25%);
+      width: 450px;
+
+      &::after {
+        content: none;
+      }
+    }
+    &__content {
+      margin-top: 0rem;
+    }
+  }
+}
